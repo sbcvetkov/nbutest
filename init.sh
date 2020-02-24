@@ -3,7 +3,6 @@
 #set up the keys for git first! 
 
 function preliminary_work {
-  git clone git@gitlab.com:sbcvetkov/nbu-dipl-thesis.git
   mkdir -p jenkins_home/ logs/nginx/ certs/
 }
 
