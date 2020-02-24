@@ -1,6 +1,17 @@
-FROM nginx
+FROM jenkins/jenkins:lts
 
-RUN rm /etc/nginx/conf.d/default.conf
-COPY html /usr/share/nginx/html
+USER root
+RUN apt-get update && apt-get -y install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg2 \
+    software-properties-common \
 
-EXPOSE 80
+ENV UID_JENKINS=1000
+ENV GID_JENKINS=1000
+
+COPY docker-entrypoint.sh /docker-entrypoint.sh
+
+ENTRYPOINT ["/sbin/tini", "--", "/docker-entrypoint.sh"]
+
