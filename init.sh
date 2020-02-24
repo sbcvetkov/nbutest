@@ -15,6 +15,7 @@ function create_certs {
     -out self_signed_cert.pem \
     -days 365 \
     -nodes -subj '/CN='$(hostname)
+    cd ..
 }
 
 function run {
