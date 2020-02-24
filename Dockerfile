@@ -6,7 +6,7 @@ RUN apt-get update && apt-get -y install \
     ca-certificates \
     curl \
     gnupg2 \
-    software-properties-common \
+    software-properties-common 
 
 ENV UID_JENKINS=1000
 ENV GID_JENKINS=1000
