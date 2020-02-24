@@ -29,12 +29,3 @@ services:
       - ${NGINX_SSL_CERT}
       - ${NGINX_SSL_KEY}
     restart: always
-
-  jenkins-slave-fortran:
-    build: jenkins-slave-fortran
-    container_name: fortran-slave
-    volumes:
-        - /var/run/docker.sock:/var/run/docker.sock
-    expose:
-        - "22"
-    restart: unless-stopped
